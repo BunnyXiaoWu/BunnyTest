@@ -1,0 +1,47 @@
+﻿-> 查看镜像源
+    - /etc/apt/sources.list.parrot文件下说可以用”parrot-mirror-selector“去查看或修改镜像源。
+
+-> 修改镜像源
+    - vim /etc/apt/sources.list.d/parrot.list
+    - 源1（中国科技大学）：deb http://mirrors.ustc.edu.cn/parrot parrot main contrib non-free
+    - 源2（北京清华大学）：deb https://mirrors.tuna.tsinghua.edu.cn/parrot main contrib non-free
+
+-> vim强制修改只读文件
+    - w !sudo tee %
+
+-> 修改文件属性
+   - sudo chmod a+w file_name
+
+-> ssh
+    - 允许远程连接：vim /etc/ssh/sshd_config -->PermitRootLogin yes
+
+-> 在.bashrc文件中添加一个python文件再source .bashrc运行，被添加的python文件会被执行
+
+-> 配置快捷方式：vim ~/.bashrc -->alias 简写命令="bash 要执行的命令"
+    - 示例：alias pycharm="bash /home/bobby/Downloads/pycharm-2020.1/bin/pycharm.sh"
+    - 再执行source ~/.bashrc使改动后的.bashrc文件生效
+    - 在输入pycharm即可以快捷方式启动pycharm
+
+-> 安装MySQL：sudo apt-get install mysql-server
+-> 判断mysql是否启动：ps aux|grep mysqld
+-> 配置mysql可以远程连接：vim /etc/mysql/mysql.conf.d/mysqld.cnf
+    - 将bind-address的值（只在本地ip监听127.0.0.1）改为：0.0.0.0，监听外部ip
+    - 再重启mysql：sudo service mysql restart
+
+-> 安装python3.6：sudo apt-get install python3.6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
